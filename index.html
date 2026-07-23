@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#ffffff">
+<title>zivimseslovy — komunikační stratég a storyteller</title>
+<meta name="description" content="Generujete, generujete.. Ale hlídá to někdo? Jsem komunikační stratég a storyteller.">
+
+<!-- ===================== OPEN GRAPH & SOCIAL SEO ===================== -->
+<meta property="og:title" content="zivimseslovy — komunikační stratég a storyteller">
+<meta property="og:description" content="Generujete, generujete.. Ale hlídá to někdo? Jsem komunikační stratég a storyteller.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zivimseslovy.cz/">
+<meta property="og:image" content="https://zivimseslovy.cz/og-image.jpg">
+<meta property="og:locale" content="cs_CZ">
+
+<!-- ===================== GEO TAGY ===================== -->
+<meta name="geo.region" content="CZ">
+<meta name="geo.placename" content="Czechia">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#b0cf54;
+  --green-dark:#9dba47;
+  --green-wash:#ffffff;
+  --ink:#2c2c2c;
+  --muted:#6f6f6f;
+  --line:#e2e2e2;
+  --paper:#ffffff;
+
+  --font:"IBM Plex Mono","Space Mono","Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+
+  --maxw:1110px;
+  --narrow:720px;
+  --radius:8px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light only;background:#fff}
+body{
+  margin:0;background:#fff;color:var(--ink);forced-color-adjust:none;
+  font-family:var(--font);font-size:15px;font-weight:400;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+.narrow{max-width:var(--narrow);margin:0 auto}
+
+/* ---------- typografie ---------- */
+h1,h2,h3{font-family:var(--font);font-weight:400;text-transform:uppercase;color:var(--ink);margin:0 0 26px;letter-spacing:.01em}
+h1{font-size:clamp(1.6rem,4.6vw,2.35rem);line-height:1.24;text-transform:none}
+h2{font-size:clamp(1.15rem,2.7vw,1.35rem);line-height:1.35;letter-spacing:.04em}
+h3{font-size:clamp(1.3rem,3.4vw,1.55rem);line-height:1.25;letter-spacing:.01em;margin-bottom:14px}
+p{margin:0 0 26px}
+strong,b{font-weight:700}
+em{font-style:italic}
+.mono-label{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* ---------- tlačítka ---------- */
+.btn{
+  display:block;width:100%;text-align:center;
+  background:var(--green);color:#fff;text-decoration:none;
+  font-family:var(--font);font-size:clamp(.8rem,2.1vw,.88rem);font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;
+  padding:20px 22px;border:0;border-radius:var(--radius);
+  transition:background .18s ease;cursor:pointer;
+}
+.btn:hover,.btn:focus{background:var(--green-dark)}
+@media(min-width:720px){ .btn{display:inline-block;width:auto;padding:19px 40px} }
+
+/* ---------- sekce: všude pevně 64px mezery ---------- */
+section, .hero, footer {padding:64px 0}
+.tint{background:#fff;border-top:1px solid var(--line)}
+
+/* ---------- hlavička a navigace ---------- */
+.site-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+/* Mobilní zobrazení hlavičky */
+.head-in{display:grid;grid-template-columns:1fr;gap:16px;padding:16px 0;align-items:center;justify-items:center}
+.logo{display:block;text-decoration:none}
+.logo img{max-width:140px;height:auto}
+.nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+.nav a{display:flex;align-items:center;justify-content:center;color:var(--muted);transition:color .2s}
+.nav a:hover{color:var(--green)}
+.nav svg{width:20px;height:20px;fill:currentColor}
+
+/* Desktop zobrazení hlavičky: logo na střed, ikony doprava */
+@media(min-width:760px){
+  .head-in{grid-template-columns:1fr auto 1fr;height:80px;padding:0}
+  .logo{grid-column:2;justify-self:center}
+  .nav{grid-column:3;justify-self:end;margin:0}
+}
+
+/* ---------- hero ---------- */
+.hero-grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+.hero p{font-size:.98rem;line-height:1.65}
+.cursor{display:inline-block;width:.5ch;height:1.02em;background:var(--green);vertical-align:-.16em;margin-left:.12em;animation:blink 1.05s steps(1,end) infinite}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.portrait{aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;background:var(--line)}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+@media(min-width:900px){ .hero-grid{grid-template-columns:1.1fr .9fr;gap:64px} }
+
+/* ---------- seznam služeb ---------- */
+.services{list-style:none;padding:0;margin:0 0 40px}
+.services li{padding:0 0 26px 26px;position:relative}
+.services li::before{content:"—";position:absolute;left:0;top:0;color:var(--green);font-weight:700}
+
+/* ---------- benefity: vnitřní mřížka ve tvaru kříže ---------- */
+.benefits{display:grid;grid-template-columns:1fr;margin-bottom:56px}
+.benefit{padding:40px 0;border-bottom:1px solid var(--line)}
+.benefit:last-child{border-bottom:none}
+/* Zmenšené nadpisy boxů podle zadání */
+.benefit h3{font-size:clamp(1.05rem,2.1vw,1.15rem);letter-spacing:.04em;margin-bottom:12px}
+.benefit p{margin:0;line-height:1.62}
+
+/* Mřížka kříže pro desktop */
+@media(min-width:820px){
+  .benefits{grid-template-columns:1fr 1fr}
+
+  /* Liché (levý sloupec): vnitřní odsazení vpravo a vnitřní vertikální linka (border-right).
+     Díky tomu linka plynule pokračuje i u poslední liché položky. */
+  .benefit:nth-child(odd){padding:48px 48px 48px 0;border-right:1px solid var(--line)}
+
+  /* Sudé (pravý sloupec): vnitřní odsazení vlevo, bez vnější pravé linky */
+  .benefit:nth-child(even){padding:48px 0 48px 48px}
+
+  /* Odstranění spodní čáry pro absolutně poslední prvek v layoutu */
+  .benefit:last-child{border-bottom:none}
+}
+
+/* ---------- jednoduchý e-mail v kontaktech ---------- */
+.contact-email-link {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  padding: 4px 12px;
+  color: var(--ink);
+  border-bottom: 4px solid var(--green);
+  border-radius: var(--radius) var(--radius) 0 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-email-link:hover {
+  background-color: var(--green);
+}
+
+/* ---------- patička ---------- */
+footer{border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.foot-in{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center}
+footer a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--green)}
+.foot-social{display:flex;gap:24px}
+
+/* ---------- COOKIES LIŠTA ---------- */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;padding:24px 0;z-index:9999;border-top:1px solid #333}
+.cookie-in{display:flex;flex-direction:column;gap:20px;align-items:center;text-align:center}
+@media(min-width:800px){ .cookie-in{flex-direction:row;text-align:left;justify-content:space-between} }
+.cookie-banner p{margin:0;font-size:.88rem;line-height:1.6;flex:1}
+.cookie-btns{display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap;justify-content:center}
+.btn-cookie{background:#fff;color:#000;border:0;padding:12px 24px;font-family:var(--font);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:var(--radius);cursor:pointer;transition:all .2s}
+.btn-cookie:hover{background:var(--green);color:#fff}
+.btn-cookie-outline{background:transparent;color:#fff;border:1px solid #fff;padding:12px 24px;font-family:var(--font);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-radius:var(--radius);cursor:pointer;transition:all .2s}
+.btn-cookie-outline:hover{background:#fff;color:#000}
+
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ===================== HLAVIČKA S LOGEM A CENTROVANOU NAVIGACÍ ===================== -->
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="logo" href="/">
+      <img src="logo.webp" alt="zivimseslovy">
+    </a>
+    <nav class="nav">
+      <a href="https://instagram.com/zivimseslovy" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/martinahonsova/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+      </a>
+      <a href="mailto:marta@zivimseslovy.cz" aria-label="E-mail">
+        <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Generujete, generujete.. Ale hlídá to někdo?<span class="cursor"></span></h1>
+        <p>Jsem komunikační stratég a storyteller. Ta hlava, co potřebujete, aby se vaše značka postupně neztratila v AI šedi.</p>
+        <p>Pomůžu vám jednoduše vysvětlit klientům, co děláte a proč by to měli chtít.</p>
+        <p><strong>Abyste zůstali sví a prodávali.</strong></p>
+      </div>
+      <div class="portrait">
+        <img src="profilovka.webp" alt="Martina Honsová - profilová fotka">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ÚVODNÍ ARGUMENT ===================== -->
+  <section>
+    <div class="wrap narrow">
+      <p>Tak schválně. Jaká je základní poučka pro generování obsahu s “ejáj”? Áno. Vždycky byste ho měli pečlivě zkontrolovat a přidat tam něco svého. Ale ruku na srdce. Ne vždycky je na to čas, hm? Zmáčknout kouzelnou šipečku, prolítnout, co to vyhodilo, copy, paste, publish. Ta rychlost a jednoduchost je tak lákavá. Ale kolikrát to uděláte, než se duše vaší značky vypaří jak pára nad hrncem a zbyde generické cosi, co nikdo nečte?</p>
+      <p>Budu tou, kdo se postará o kontrolu a posunutí obsahu zpátky k lidskosti. Nebo vám chytré a funkční texty vytvořím od píky. Česky i anglicky.</p>
+      <a class="btn" href="mailto:marta@zivimseslovy.cz?subject=Poj%C4%8Fme%20spolu%20ps%C3%A1t!&body=Ahoj%20Mar%C5%A5o%2C%0D%0A%0D%0Acht%C4%9Bl%2Fa%20bych%20pomoct%20s...">NAPIŠTE SI O TO</a>
+    </div>
+  </section>
+
+  <!-- ===================== CO VŠECHNO VEZMU ZA VÁS ===================== -->
+  <section>
+    <div class="wrap narrow">
+      <h2>CO VŠECHNO VEZMU ZA VÁS?</h2>
+      <p>Kdykoliv půjde o slova, texty nebo komunikaci jako celek a nebudete vědět kudy kam nebo jestli to, co máte, bude plnit cíle, jsem tady.</p>
+
+      <ul class="services">
+        <li><strong>pomůžu vám komunikaci nastavit:</strong> pokud ještě nevíte, co je ten příběh, který byste měli vyprávět a jak na to, celé to spolu vymyslíme</li>
+        <li><strong>udržím hlas vaší značky napříč kanály:</strong> vytvořím s vámi, anebo zkontroluju všechno, co jde ven, aby to drželo pohromadě a mluvilo jako vy; dlouhodobě</li>
+        <li><strong>dám dohromady příběhy:</strong> vymyslím jednotlivé narativy, které budeme protkávat do komunikace, aby byla lidská a uvěřitelná (i když bude draft od AI)</li>
+        <li><strong>vyhrnu si rukávy a budu psát:</strong> mám skoro milión jedna let zkušeností se strategickým copywritingem v CZ i EN, co si vymyslím, umím vám i napsat</li>
+        <li><strong>budu překládat složitosti:</strong> jsem studentka phd a věřte mi, neodradí mě ani ten nejzamotanější odborný text - vyzobám z něj to hlavní a zjednoduším tak, aby se četl</li>
+        <li><strong>ukážu vám, co se dá dostat z AI:</strong> protože rozumím komunikaci a studovala jsem jak češtinu tak angličtinu, vím, jak promptovat; dostanu úplně jiné výsledky než vy</li>
+        <li><strong>vím, jak to poladit:</strong> vidím detaily, co vám možná unikají - slova, co se nehodí pro cílovku, tón, co zákazníka odradí, “přitom takové blbosti” a ony rozhodují, kdo nakoupí</li>
+        <li><strong>vaše SEO mi poděkuje:</strong> i když nám AI pomůže, nebudeme internet zaplavovat obecnými nesmysly, co by si mohly postnout dvě další značky. a analytika vám to vrátí</li>
+        <li><strong>ochráním vaši firemní kulturu:</strong> kdo chce pracovat pro firmu, co někde zapomněla svoji podstatu a mluví jako studený robot? nikdo. budete dál živí a zajímaví</li>
+      </ul>
+
+      <p>Najmout si mě můžete na myšlení, psaní nebo oboje. Nejčastěji řeším komunikační analýzy (co říkají jiní a kde je prostor pro vás), kampaně (třeba launche nových produktů), landing page, obsah pro blog nebo třeba e-book, newslettery nebo obsahové plány a copy pro social. Vždycky se dívám hlavně na to, jaký má obsah dopad na byznys, ne jen, jestli je to dost “učesané”.</p>
+      <p>Pracuji remote od Atlantiku. Ale výsledky budou bez ohledu na vzdálenost, nebojte.</p>
+
+      <a class="btn" href="/portfolio" style="margin-bottom:52px">TADY JE MOJE PORTFOLIO</a>
+
+      <p>Neřeším, jestli jste velcí nebo malí, jen to, jestli nám to spolu klape. Pokud chcete jen bezhlavě generovat hromadu textů, nebudeme si rozumět.</p>
+      <p>AI v práci samozřejmě používám, hlavně pro rešerše, organizaci myšlenek nebo první úplně hrubé nástřely. Ale tam to končí a přebírá to moje hlava a klávesnice.</p>
+    </div>
+  </section>
+
+  <!-- ===================== A CO Z TOHO BUDETE MÍT ===================== -->
+  <section>
+    <div class="wrap narrow">
+      <h2>A CO Z TOHO BUDETE MÍT?</h2>
+      <p style="margin-bottom:60px">AI je dobrý sluha, ale v komunikaci hóódně zlý pán. :) Když do toho půjdeme spolu, ušetříte si hromadu rozhodování nad tím, co je a není dobré, plus:</p>
+
+      <!-- Vnitřní mřížka ve tvaru kříže -->
+      <div class="benefits">
+        <div class="benefit"><h3>OCHRÁNÍTE ZNAČKU</h3><p>Je to skoro to nejdůležitější, co máte. Váš brand, vaše podstata. I když AI řeknete, ať drží tonalitu nebo sleduje manuály, nebude to ono. Spolu zařídíme, že vaše značka bude pořád rozpoznatelná. I na sto honů.</p></div>
+        <div class="benefit"><h3>PŮJDETE NA TO VĚDECKY</h3><p>Storytelling je věda. Fakt. Znám jeho principy a vím, jak zahrát uživateli na emoce, využít jeho motivace nebo potřebu identifikovat se přes značky. Řeším to v rámci svojí dizertace, takže nabito máme.</p></div>
+        <div class="benefit"><h3>NEZMIZÍTE. NAOPAK</h3><p>Díky tomu, že váš obsah pohlídám, zůstanete sví. Nevytratíte se za nudná klišé a nebudete znít jako 169 značek okolo. A to se zvlášť dneska cení. S autentickou profi komunikací budete vidět víc než kdy dřív.</p></div>
+        <div class="benefit"><h3>NEPROPADNETE SE DO PEKLA</h3><p>Pardon, to je malý vtípek. Ale já věřím, že všechen bezduchý obsah by měl v pořádně roztopeném kotli skončit. Ukažte, že máte na víc, než nudit svoje zákazníky materiálem na spálení.</p></div>
+        <div class="benefit"><h3>BUDETE BAVIT</h3><p>Nebojte se, že by vaši zákazníci nepoznali, že si na obsahu dáváte záležet a tvoříte ho (skoro) růčo fůčo. Když u vás najdou něco opravdového, budou se rádi vracet. Budou vám věřit. A nakupovat.</p></div>
+        <div class="benefit"><h3>PROPOJÍTE SE</h3><p>Když sedíte s kamarády, vyprávíte jim polovičaté historky nebo do toho dáváte šťávu? Přesně. “No nakonec to vypadá docela oukej, to postnu” je ta největší past. S tím budoucí zákazníky jen těžko oslníte.</p></div>
+        <div class="benefit"><h3>KLIDNÉ SPANÍ</h3><p>Alespoň co se týče firemní komunikace. Budete vědět, že je o ni profesionálně postaráno a neleknete se postu na firemním profilu, který ušili kolegové horkou AI jehlou a na vás si jen tak vyskočil.</p></div>
+        <div class="benefit"><h3>ČAS NA NĚCO JINÉHO</h3><p>I když to vypadá, že z “ejáj” toho dostanete strašně moc strašně rychle, řešit to a ladit stojí spoustu času. Ušetřete si ho. A stejně tak náklady - neplaťte exekutivu, ale odborný dohled.</p></div>
+        <div class="benefit"><h3>ÚČET BEZ “FÍČEK”</h3><p>Po tom, co se dohodneme, nevytáhnu na vás ze šuplíku smlouvu s nesmyslnými pravidelnými platbami. Pracuji pro vás a posílám faktury, jen když mě opravdu potřebujete. Platíte za hotové úkoly a cenu vždycky znáte předem.</p></div>
+      </div>
+
+      <a class="btn" href="mailto:marta@zivimseslovy.cz?subject=Poj%C4%8Fme%20spolu%20ps%C3%A1t!&body=Ahoj%20Mar%C5%A5o%2C%0D%0A%0D%0Acht%C4%9Bl%2Fa%20bych%20pomoct%20s...">NAPIŠTE SI O TO</a>
+    </div>
+  </section>
+
+  <!-- ===================== O MNĚ ===================== -->
+  <article>
+    <section>
+      <div class="wrap narrow">
+        <h2>Sedneme si?</h2>
+        <p><strong>Živím se slovy. A umím vyprávět.</strong> Tak, aby to něco ve vás chytlo, nepustilo a dočetli jste až do konce.</p>
+        <p><strong>V komunikaci jsem přes 15 let</strong> a došla jsem k tomu, že se nebojím ptát na úplně hloupé otázky. Abych přesně pochopila, co děláte a dokázala o tom jednoduše říct vašim klientům. Tak, aby to vzali a řekli si, že to je přesně to, co hledali.</p>
+        <p>Překládám velkolepé vize, mise nebo technické “fíčury” do lehké komunikace, co funguje. Vždycky, když někde vidím “dynamické týmy”, “flexibilitu” nebo “synergii”, potutelně se usměju. Protože to je přesně to, kde je prostor pro mě.</p>
+        <p>Provymýšlela a propsala jsem profesně už asi šest tisíc dnů. Vím, jak na to. Příběhy mě baví i když vypnu všechny Slacky, Teamsy nebo Zoomy. Na svém <strong><a href="https://www.instagram.com/zivimseslovy/" target="_blank" rel="noopener">Instagramu</a></strong> už sedm let denně vyprávím. Nejdřív historky ze života digitální nomádky a teď expatky a psí mámy v milovaném Portugalsku. Nemám tam obří základnu a přesto generuji desítky tisíc views měsíčně a krásný engagement.</p>
+        <p>Vždycky jsem byla šprtka a milovala školu. Proto jsem si loni udělala <strong>C2 certifikaci od Cambridge</strong> a mám tak v angličtině potvrzenou úroveň rodilého mluvčího a plním si sen o studiu <strong>PhD</strong> - můj obor je Marketing & Strategy a do lavic usedám na University of Aveiro.</p>
+        <a class="btn" href="mailto:marta@zivimseslovy.cz?subject=Poj%C4%8Fme%20spolu%20ps%C3%A1t!&body=Ahoj%20Mar%C5%A5o%2C%0D%0A%0D%0Acht%C4%9Bl%2Fa%20bych%20pomoct%20s...">NAPÍŠEME SI?</a>
+      </div>
+    </section>
+  </article>
+
+  <!-- ===================== KONTAKT BEZ FORMULÁŘE ===================== -->
+  <section class="tint" id="kontakt">
+    <div class="wrap narrow" style="text-align: center;">
+      <h2>PRVNÍ MALÁ KONZULTACE JE NA MĚ</h2>
+      <p>Chcete rovnou probrat nápad na spolupráci po telefonu nebo e-mailem? Jsem tu.</p>
+      <p style="margin-bottom:48px;">Pošlete mi na sebe kontakt, řekněte, co vás trápí a já se ozvu s tím, jak bych vám to pomohla vyřešit.</p>
+
+      <div style="display:flex; flex-direction:column; gap:24px; align-items:center;">
+        <a href="mailto:marta@zivimseslovy.cz?subject=Poj%C4%8Fme%20spolu%20ps%C3%A1t!&body=Ahoj%20Mar%C5%A5o%2C%0D%0A%0D%0Acht%C4%9Bl%2Fa%20bych%20pomoct%20s..." class="contact-email-link">
+           marta@zivimseslovy.cz
+        </a>
+        <a href="tel:+420724317937"
+           style="font-size:clamp(1.2rem, 3vw, 1.4rem); text-decoration:none; color:var(--muted); transition:color .2s;">
+           +420 724 317 937
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== PATIČKA ===================== -->
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div>Ing. Martina Honsová, IČ: 03684091, plátce DPH</div>
+      <div>moje hodinovka je 1 600 Kč bez DPH</div>
+    </div>
+    <div class="foot-social">
+      <a href="mailto:marta@zivimseslovy.cz?subject=Poj%C4%8Fme%20spolu%20ps%C3%A1t!&body=Ahoj%20Mar%C5%A5o%2C%0D%0A%0D%0Acht%C4%9Bl%2Fa%20bych%20pomoct%20s...">E-mail</a>
+      <a href="https://www.linkedin.com/in/martinahonsova/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://instagram.com/zivimseslovy" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== COOKIES LIŠTA ===================== -->
+<div id="cookie-banner" class="cookie-banner">
+  <div class="wrap cookie-in">
+    <p>Nebojte, další sušenková metafora, kterých už jiní copywriteři naťukali asi milión šest, se nekoná. Ale musím vám dát i tak vědět, že tu na zivimseslovy.cz mám cookies, abych pro vás mohla to spolupsaní pořád vylepšovat.</p>
+    <div class="cookie-btns">
+      <button class="btn-cookie" onclick="document.getElementById('cookie-banner').style.display='none'">dobře, Marťo</button>
+      <button class="btn-cookie-outline" onclick="document.getElementById('cookie-banner').style.display='none'">to se mi nezdá</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SCHEMA.ORG ===================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "zivimseslovy — komunikační stratég a storyteller",
+  "image": "https://zivimseslovy.cz/og-image.jpg",
+  "@id": "https://zivimseslovy.cz/",
+  "url": "https://zivimseslovy.cz/",
+  "telephone": "+420724317937",
+  "email": "marta@zivimseslovy.cz",
+  "priceRange": "1 600 Kč / hod",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CZ"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Ing. Martina Honsová",
+    "jobTitle": "Komunikační stratég a storyteller",
+    "sameAs": [
+      "https://www.linkedin.com/in/martinahonsova/",
+      "https://instagram.com/zivimseslovy"
+    ]
+  },
+  "taxID": "CZ03684091",
+  "description": "Generujete, generujete.. Ale hlídá to někdo? Jsem komunikační stratég a storyteller."
+}
+</script>
+
+</body>
+</html>
