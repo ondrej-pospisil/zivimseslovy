@@ -1,10 +1,3 @@
-Aha, už vidím, kde se stala chyba! Třída pro vnitřek hlavičky totiž omylem přepsala ochranné okraje z hlavní ohrádky webu (nastavila pravý a levý padding na nulu).
-
-Opravil jsem to tak, aby hlavička plně respektovala bezpečné okraje (`26px` z každé strany), které drží zbytek obsahu na celém webu. Teď už logo ani ikonky nebudou nalepené na úplném kraji displeje a celá hlavička bude na mobilu krásně dýchat.
-
-Tady je opravený kompletní kód:
-
-```html
 <!DOCTYPE html>
 <html lang="cs">
 <head>
